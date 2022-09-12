@@ -2,17 +2,12 @@
 value = 123
 new_value = value / 2 if value < 100 else - value
 ########################################################
-value = 14
-if value < 100:
-    new_value = 1
-else:
-    new_value = 0
+value = 40
+new_value = value / value if value < 100 else value * 0
+print(new_value)
 #########################################################
-value = 245
-if value < 100:
-    new_value = True
-else:
-    new_value = False
+value = 140
+new_value = True if value < 100 else False
 #########################################################
 my_str = "zxc"
 if len(my_str) < 5:
