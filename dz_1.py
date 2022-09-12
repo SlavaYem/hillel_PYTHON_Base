@@ -4,7 +4,6 @@ new_value = value / 2 if value < 100 else - value
 ########################################################
 value = 40
 new_value = value / value if value < 100 else value * 0
-print(new_value)
 #########################################################
 value = 140
 new_value = True if value < 100 else False
