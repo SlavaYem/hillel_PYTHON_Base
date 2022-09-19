@@ -28,7 +28,5 @@ my_list = [123, 23, 45, 64, 100, 1001, 34, 300, 500, 900]
 if len(my_list) < 2:
     my_list.append(0)
 else:
-    for value in range(len(my_list)):
-        result = my_list[value] + my_list[value - 1]
-my_list.append(result)
-
+    result = my_list[len(my_list)-2] + my_list[len(my_list)-1]
+    my_list.append(result)
