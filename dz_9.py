@@ -1,4 +1,5 @@
 def reverse_str_in_list(my_list_in_def):
+    new_list = []
     for i, num in enumerate(my_list_in_def):
         if i % 2:
             new_list.append(num[::-1])
@@ -6,13 +7,12 @@ def reverse_str_in_list(my_list_in_def):
             new_list.append(num)
     return new_list
 
-
-new_list = []
 my_list = ["qwe", "zxc", "ert", "tyu"]
-new_list = reverse_str_in_list(my_list)
-print(new_list)
+my_new_list = reverse_str_in_list(my_list)
+print(my_new_list)
 ##############################################################################
 def a_first_in_str_in_list(my_list_in_def):
+    new_list = []
     for index in my_list_in_def:
         if "a" == index[0]:
             new_list.append(index)
@@ -20,11 +20,11 @@ def a_first_in_str_in_list(my_list_in_def):
 
 
 my_list = ["abc", "dbc", "zxc"]
-new_list = []
-new_list = a_in_str_in_list(my_list)
-print(new_list)
+my_new_list = a_first_in_str_in_list(my_list)
+print(my_new_list)
 ##############################################################################
 def a_in_str_in_list(my_list_in_def):
+    new_list = []
     for index in my_list_in_def:
         if "a" in index:
             new_list.append(index)
@@ -32,17 +32,16 @@ def a_in_str_in_list(my_list_in_def):
 
 
 my_list = ["abc","dbc","zxc" ," d aa"]
-new_list = []
-new_list = a_in_str_in_list(my_list)
-print(new_list)
+my_new_list = a_in_str_in_list(my_list)
+print(my_new_list)
 ##############################################################################
 def str_not_int_in_list(my_list_in_def):
+    new_list = []
     for index in range(len(my_list_in_def)):
         if type(my_list_in_def[index]) == str:
-            my_new_list.append(my_list_in_def[index])
-    return my_new_list
+            new_list.append(my_list_in_def[index])
+    return new_list
 
-my_new_list = []
 my_list = [1, 2, 3, "11", "22", 33]
 my_new_list = str_not_int_in_list(my_list)
 print(my_new_list)
@@ -56,6 +55,7 @@ my_list = symbols_alone_in_str(my_str)
 print(my_list)
 ##############################################################################
 def symbols_in_lists(my_str_1_in_def,my_str_2_in_def):
+    result = []
     for i in my_str_1_in_def:
         if i in my_str_2_in_def:
             result.append(i)
@@ -65,11 +65,11 @@ def symbols_in_lists(my_str_1_in_def,my_str_2_in_def):
 
 my_str_1 = "qwe dfsfdsf e q "
 my_str_2 = "qwe  e  q"
-result = []
 my_result = symbols_in_lists(my_str_1,my_str_2)
 print(my_result)
 ##############################################################################
 def symbols_in_lists(my_str_1_in_def, my_str_2_in_def):
+    result = []
     for i in my_str_1_in_def:
         k = my_str_1_in_def.find(i) - my_str_1_in_def.rfind(i)
         if k == 0:
@@ -80,7 +80,6 @@ def symbols_in_lists(my_str_1_in_def, my_str_2_in_def):
 
 my_str_1 = "qwe dfsfdsf e q "
 my_str_2 = "qwe  e  q"
-result = []
 my_result = symbols_in_lists(my_str_1, my_str_2)
 print(my_result)
 ##############################################################################
