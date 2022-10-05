@@ -1,7 +1,7 @@
 ###########################################################################################################################
-number = 123123400000434343000032
-new_number = str(nubmer)
-print(new_number.count('0'))
+# number = 123123400000434343000032
+# new_number = str(nubmer)
+# print(new_number.count('0'))
 ###########################################################################################################################
 number = 10020000
 new_number = str(number)
@@ -71,23 +71,24 @@ for index in range(len(my_list)):
 print(my_new_list)
 ###########################################################################################################################
 my_str = " qweeeeee"
-my_list = [i for i in my_str if my_str.count(i) == 1]
+my_list = []
+for index in set(my_str):
+    if my_str.count(index) == 1:
+        my_list.append(index)
 print(my_list)
 ###########################################################################################################################
 my_str_1 = "qwe dfsfdsf e q "
 my_str_2 = "qwe  e  q"
 result = []
-for i in my_str_1:
-    if i in my_str_2:
-        result.append(i)
-print(result)
+elements_common = list(set(my_str_1) & set(my_str_2))
+print(elements_common)
 ###########################################################################################################################
 my_str_1 = "qwe dfsfdsf q qqq"
-my_str_2 = "qwe zxc  qewqeqweqwe"
-result = []
-for i in my_str_1:
-    k = my_str_1.find(i) - my_str_1.rfind(i)
-    if k == 0:
-        if i in my_str_2 and my_str_2.find(i) - my_str_2.rfind(i) == 0 :
-            result.append(i)
-print(result)
+my_str_2 = "qwe zxc  q"
+unique_common_elements = []
+elements_common = list(set(my_str_1) & set(my_str_2))
+for element in elements_common:
+    if my_str_1.count(element) == 1 and my_str_2.count(element) == 1:
+        unique_common_elements.append(element)
+print(unique_common_elements)
+
