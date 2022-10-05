@@ -14,4 +14,22 @@ def names (filename):
 
 my_2_txt = names("names.txt")
 print(my_2_txt)
-#######################################
+#############################################################################
+def authors (filename):
+    with open("authors.txt", "r") as name:
+        data = [line.split("-") for line in name.readlines()]
+        new_list = []
+        new_list_2 = []
+        for index in range(len(data)):
+           new_str = data[index].pop(0)
+           new_list.append(new_str)
+        for count_1 in new_list:
+            dict = {}
+            dict["data"] = count_1
+            if count_1[0].isdigit():
+                new_list_2.append(dict)
+    return new_list_2
+
+
+my_3_txt = authors("authors.txt")
+print(my_3_txt)
