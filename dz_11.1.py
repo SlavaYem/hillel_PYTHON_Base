@@ -3,16 +3,10 @@ import string
 import json
 
 
-
-def generate_alphanum_random_string(length_1):
+def generate_txt_file(length_1):
     letters_and_digits = string.ascii_letters + string.digits + string.whitespace
     rand_string = ''.join(random.choice(letters_and_digits) for i in range(length_1))
     return rand_string
-
-
-def generate_txt_file(length_2):
-    my_str = generate_alphanum_random_string(length_2)
-    return my_str
 
 
 length = random.randint(100, 1001)
@@ -41,14 +35,13 @@ my_dict = generate_json_data()
 
 
 def generate_and_write_file(filename):
-    if filename.endswith('.txt'):
-        with open(filename, "w") as file:
-            file.writelines(generate_txt_file(length))
-    elif filename.endswith('.json'):
-        with open(filename, 'w') as json_file:
-            json.dump(my_dict, json_file)
-    else:
-        print("Unsupported file format")
+    with open(filename, "w") as file:
+        if filename.endswith('.txt'):
+            file.write(generate_txt_file(length))
+        elif filename.endswith('.json'):
+            json.dump(my_dict, file)
+        else:
+            print("Unsupported file format")
 
 
 my_str_1 = "1.json"
