@@ -1,19 +1,15 @@
 # #############################################################################
 def domains_internet(filename):
-    my_1_txt = []
     with open(filename, "r") as name:
-        text = name.read()
-        domen_name = text.replace(".", "")
-        my_1_txt.append(domen_name)
-    return my_1_txt
+        text = [line.strip()[1:] for line in name.readlines()]
+    return text
 my_1_txt = domains_internet("domains.txt")
 print(my_1_txt)
 # #############################################################################
 def names (filename):
     with open(filename, "r") as name:
-        text = '\t'.join([line.split()[1] for line in name.readlines()])
+        text = [line.split()[1] for line in name.readlines()]
     return text
-
 my_2_txt = names("names.txt")
 print(my_2_txt)
 # #############################################################################
