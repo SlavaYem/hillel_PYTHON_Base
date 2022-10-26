@@ -9,6 +9,7 @@
 import json
 import re
 
+
 def read_json_file(filename):
     with open(filename, "r") as file:
         data_1 = json.load(file)
@@ -37,3 +38,14 @@ def sorted_text_symbols(item):
 sorted_text = sorted(data, key=sorted_text_symbols)
 print(sorted_text)
 
+
+def sorted_years(item):
+    my_years = item["years"]
+    template = r".+\s(\d+)\D*$"
+    year = re.match(template, my_years).group(1)
+    year = -int(year) if ("bc" in my_years.lower()) else int(year)
+    return year
+
+
+years = sorted(data, key=sorted_years)
+print(years)
